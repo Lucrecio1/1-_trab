@@ -76,14 +76,14 @@ void sms_1_sucesso(int etapa){
 void sms_1_erro(){
         char nao_exist[35]="OS DADOS SELECIONADO NAO EXISTE ";
         printf("\n %s", strupr(nao_exist));
-        printf("\nOU A OPCAO ESCOLHIDA E IVALIDA\n\n");
+        printf("\nOU A OPCAO ESCOLHIDA E INVALIDA\n\n");
         Interface();
         pausar_ex();
 }
 
 void sms_2_erro(int num){
         char nao_exist[35]="deves digitar numeros de 1 a ";
-        printf("\n %s %d", strupr(nao_exist),num);
+        printf("\n%s %d", strupr(nao_exist),num);
         printf("\nDIGITE NOVAMENTE\n\n");
         Interface();
         pausar_ex();
