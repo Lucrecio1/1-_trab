@@ -197,9 +197,9 @@ void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
 
 void CAD_VACINA(DADOS pessoa[],int ver_resp,int qtds_d,int i){
         mod_1_reg(pessoa,i);
-        //mod_2_reg(pessoa,i);
-        //mod_3_reg(pessoa,i);
-        //mod_4_reg(pessoa,qtds_d,ver_resp,i); 
+        mod_2_reg(pessoa,i);
+        mod_3_reg(pessoa,i);
+        mod_4_reg(pessoa,qtds_d,ver_resp,i); 
         
         printf("\n\t\tREGISTO DE VACINA\n");
         Interface();
