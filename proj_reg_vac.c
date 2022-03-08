@@ -12,7 +12,6 @@ typedef struct comorb{
     char  comorbil[100];   
 } COMORB;
 
-//estrutura de dados individual
 typedef struct Dados_Individual{
     int    cod_reg;
     char nome_cmp[100];
@@ -51,7 +50,7 @@ void inf_etapas(int etapa){
     system("cls");
     printf("\n\t\tREGISTO DE VACINA\n");
     Interface();
-    printf("\nPREENCHE OS CAMPOS DA DA ETAPA %d DE 4\n", etapa);
+    printf("\nPREENCHE OS CAMPOS DA ETAPA %d DE 4\n", etapa);
     Interface();
     
 }
@@ -217,7 +216,7 @@ void preencher_RI(DADOS pessoa[], DADOS_IDT luc[],int i){
 
 void Mostrar_RI(DADOS_IDT pessoa[],int qtd_reg){
 	
-    char inf[40]=" registos individuais a serem mostrados";
+    char inf[40]="registos individuais a serem mostrados";
     
     printf("\n %d %s",qtd_reg,strupr(inf));
     Interface();
