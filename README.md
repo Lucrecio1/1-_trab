@@ -2,4 +2,4 @@
 
 ## trabalho semestral registo de vacina.
 
-Lu depois de editares clique no commit 
+LÚ depois de editares clique no commit 
