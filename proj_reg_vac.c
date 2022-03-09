@@ -152,7 +152,7 @@ void mod_3_reg(DADOS pessoa[],int i){
         printf("Digite a Municipio:");
             fflush(stdin);
             fgets(pessoa[i].muni_res, 30, stdin); 
-          sms_1_sucesso(3);  
+           sms_1_sucesso(3);  
 }
 
 void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
