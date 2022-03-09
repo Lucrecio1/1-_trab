@@ -197,9 +197,9 @@ void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
 
 void CAD_VACINA(DADOS pessoa[],int ver_resp,int qtds_d,int i){
         mod_1_reg(pessoa,i);
-        mod_2_reg(pessoa,i);
-        mod_3_reg(pessoa,i);
-        mod_4_reg(pessoa,qtds_d,ver_resp,i); 
+        //mod_2_reg(pessoa,i);
+        //mod_3_reg(pessoa,i);
+        //mod_4_reg(pessoa,qtds_d,ver_resp,i); 
         
         printf("\n\t\tREGISTO DE VACINA\n");
         Interface();
@@ -218,14 +218,14 @@ void Mostrar_RI(DADOS_IDT pessoa[],int qtd_reg){
 	
     char inf[40]="registos individuais a serem mostrados";
     
-    printf("\n %d %s",qtd_reg,strupr(inf));
+    printf("\n %d %s\n",qtd_reg,strupr(inf));
     Interface();
     for (int i = 1; i <= qtd_reg; i++)
     {	 
-    	 printf("\n\nNome: %s",strupr(pessoa[i].Nome_cp));  
-         printf("Codigo de registo: %dLLDDB%d", pessoa[i].COD_RI, pessoa[i].COD_RI*11 );
-         printf("\nDocumento de ID: %s", strupr(pessoa[i].DOC_IND));  
-         printf("Numero do DI: %s", pessoa[i].NUM_DI); 	
+    	 printf("\n Nome: %s",strupr(pessoa[i].Nome_cp));  
+         printf(" Codigo de registo: %dLLDDB%d", pessoa[i].COD_RI, pessoa[i].COD_RI*11 );
+         printf("\n Documento de ID: %s ", strupr(pessoa[i].DOC_IND));  
+         printf(" Numero do DI: %s\n ", pessoa[i].NUM_DI); 	
     	  Interface();
     }pausar_ex();	
 }
@@ -260,7 +260,7 @@ void mostrar_Ri_por_parte(DADOS_IDT pessoa[], int opcao,int qtd_reg){
         }
 }
 void op_mostrar( DADOS_IDT ver[], int op_most,int qtd_reg);
-// função principa responsavel pela chamada das sub-rotinas
+
 void main(){
     int opc,c,op_most;
     int qtd_reg,resp,qtds_doe;
