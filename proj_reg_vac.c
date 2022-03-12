@@ -40,7 +40,6 @@ void Interface(){
         printf("-");
     }
 }
-
 void pausar_ex(){
     printf("\n\nCLIQUE EM QUALQUER TECLA PARA CONTINUAR\n");
         system("pause");
@@ -63,7 +62,7 @@ void sms_1_analise(int etapa){
         _sleep(1000);
     }
 }
-void sms_1_sucesso(int etapa){
+void sms_2_sucesso(int etapa){
     system("cls");
     printf("\n\t\tREGISTO DE VACINA\n");
     Interface();
@@ -71,23 +70,20 @@ void sms_1_sucesso(int etapa){
     _sleep(2000);
     system("cls");
 }
-
-void sms_1_erro(){
+void sms_3_alert(){
         char nao_exist[35]="OS DADOS SELECIONADO NAO EXISTE ";
         printf("\n %s", strupr(nao_exist));
         printf("\nOU A OPCAO ESCOLHIDA E INVALIDA\n\n");
         Interface();
         pausar_ex();
 }
-
-void sms_2_erro(int num){
+void sms_4_erro(int num){
         char nao_exist[35]="deves digitar numeros de 1 a ";
         printf("\n%s %d", strupr(nao_exist),num);
         printf("\nDIGITE NOVAMENTE\n\n");
         Interface();
         pausar_ex();
 }
-
 void mod_1_reg(DADOS pessoa[],int i){
          inf_etapas(1);
         printf("\nDigite o Nome:");
@@ -98,7 +94,7 @@ void mod_1_reg(DADOS pessoa[],int i){
            fflush(stdin);
            fgets(pessoa[i].Doc_Ind, 40, stdin);
 
-        printf("Digite o Numero do ocumento Individual:");
+        printf("Digite o Numero do documento Individual:");
            fflush(stdin);
            fgets(pessoa[i].Num_Di, 15, stdin);  
           
@@ -109,7 +105,6 @@ void mod_1_reg(DADOS pessoa[],int i){
         pessoa[i].cod_reg=(rand()%100)*12;
          sms_1_sucesso(1);
 }
-
 void mod_2_reg(DADOS pessoa[],int i){
      inf_etapas(2);
        printf("\nDigite o numero de telefone: ");   
@@ -138,7 +133,6 @@ void mod_2_reg(DADOS pessoa[],int i){
              }          
      }                         
 }
-
 void mod_3_reg(DADOS pessoa[],int i){
      inf_etapas(3);
         printf("\nDigite a Nacionalidade:");
@@ -154,7 +148,6 @@ void mod_3_reg(DADOS pessoa[],int i){
             fgets(pessoa[i].muni_res, 30, stdin); 
            sms_1_sucesso(3);  
 }
-
 void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
      inf_etapas(4);
     printf("\nPOSSUI COMORBILIDADE?");
@@ -194,26 +187,23 @@ void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
                break;
            }
 }
-
 void CAD_VACINA(DADOS pessoa[],int ver_resp,int qtds_d,int i){
         mod_1_reg(pessoa,i);
-        //mod_2_reg(pessoa,i);
-        //mod_3_reg(pessoa,i);
-        //mod_4_reg(pessoa,qtds_d,ver_resp,i); 
+        mod_2_reg(pessoa,i);
+        mod_3_reg(pessoa,i);
+        mod_4_reg(pessoa,qtds_d,ver_resp,i); 
         
         printf("\n\t\tREGISTO DE VACINA\n");
         Interface();
         printf("\nRegisto numero %d feito com sucesso", i);
         _sleep(1300);
 }
-
 void preencher_RI(DADOS pessoa[], DADOS_IDT luc[],int i){
         strcpy(luc[i].Nome_cp,pessoa[i].nome_cmp);
         luc[i].COD_RI=pessoa[i].cod_reg;
         strcpy(luc[i].DOC_IND,pessoa[i].Doc_Ind);
         strcpy(luc[i].NUM_DI,pessoa[i].Num_Di);
 }
-
 void Mostrar_RI(DADOS_IDT pessoa[],int qtd_reg){
 	
     char inf[40]="registos individuais a serem mostrados";
@@ -229,7 +219,6 @@ void Mostrar_RI(DADOS_IDT pessoa[],int qtd_reg){
     	  Interface();
     }pausar_ex();	
 }
-
 void Menu_principal(){
 	printf("\n\t\tESCOLHA A OPCAO\n");
 	Interface();	
@@ -260,7 +249,6 @@ void mostrar_Ri_por_parte(DADOS_IDT pessoa[], int opcao,int qtd_reg){
         }
 }
 void op_mostrar( DADOS_IDT ver[], int op_most,int qtd_reg);
-
 void main(){
     int opc,c,op_most;
     int qtd_reg,resp,qtds_doe;
@@ -319,7 +307,6 @@ void main(){
      	}    
     }
 }	
-
 void op_mostrar( DADOS_IDT ver[], int op_most, int qtd_reg){
   for(;;){
     printf("\n\t\tESCOLHA A OPCAO \n");
