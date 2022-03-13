@@ -122,7 +122,9 @@ void mod_2_reg(DADOS pessoa[],int i){
                   scanf("%d",&pessoa[i].dat_nasc.ano);
             sms_1_analise(2);
             
-           if ((pessoa[i].dat_nasc.dia > 0 && pessoa[i].dat_nasc.dia <= 31) && (pessoa[i].dat_nasc.mes > 0 && pessoa[i].dat_nasc.mes <= 12) && ((pessoa[i].dat_nasc.ano>0) &&(2022-pessoa[i].dat_nasc.ano>=12) ))
+           if ((pessoa[i].dat_nasc.dia > 0 && pessoa[i].dat_nasc.dia <= 31) && 
+		   (pessoa[i].dat_nasc.mes > 0 && pessoa[i].dat_nasc.mes <= 12) && 
+		   ((pessoa[i].dat_nasc.ano>0) &&(2022-pessoa[i].dat_nasc.ano>=12) ))
             {
                  sms_2_sucesso(2);
                  break;
@@ -181,18 +183,17 @@ void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
                     }  
                 }
                break;
-           case 0:
-                   strcpy(p[indice].comorb[1].comorbil,"sem comorbilidade");
+           case 0:strcpy(p[indice].comorb[1].comorbil,"sem comorbilidade");
                break;
            default:
                break;
            }
 }
 void CAD_VACINA(DADOS pessoa[],int ver_resp,int qtds_d,int i){
-        //mod_1_reg(pessoa,i);
+        mod_1_reg(pessoa,i);
         mod_2_reg(pessoa,i);
-       // mod_3_reg(pessoa,i);
-        //mod_4_reg(pessoa,qtds_d,ver_resp,i); 
+        mod_3_reg(pessoa,i);
+        mod_4_reg(pessoa,qtds_d,ver_resp,i); 
         
         printf("\n\t\tREGISTO DE VACINA\n");
         Interface();
