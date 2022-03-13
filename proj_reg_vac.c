@@ -121,13 +121,14 @@ void mod_2_reg(DADOS pessoa[],int i){
                 printf("ano: ");
                   scanf("%d",&pessoa[i].dat_nasc.ano);
             sms_1_analise(2);
-           if ((pessoa[i].dat_nasc.dia > 0 && pessoa[i].dat_nasc.dia <= 31) && (pessoa[i].dat_nasc.mes > 0 && pessoa[i].dat_nasc.mes <= 12) && pessoa[i].dat_nasc.ano >= 1940)
+            
+           if ((pessoa[i].dat_nasc.dia > 0 && pessoa[i].dat_nasc.dia <= 31) && (pessoa[i].dat_nasc.mes > 0 && pessoa[i].dat_nasc.mes <= 12) && ((pessoa[i].dat_nasc.ano>0) &&(2022-pessoa[i].dat_nasc.ano>=12) ))
             {
                  sms_2_sucesso(2);
                  break;
             }else{
-                printf("\nData incerta");
-                _sleep(1000);
+                printf("\nData incerta, nao pode fazer o registo");
+                _sleep(1500);
                 system("cls");
                  Interface();
              }          
@@ -188,10 +189,10 @@ void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
            }
 }
 void CAD_VACINA(DADOS pessoa[],int ver_resp,int qtds_d,int i){
-        mod_1_reg(pessoa,i);
+        //mod_1_reg(pessoa,i);
         mod_2_reg(pessoa,i);
-        mod_3_reg(pessoa,i);
-        mod_4_reg(pessoa,qtds_d,ver_resp,i); 
+       // mod_3_reg(pessoa,i);
+        //mod_4_reg(pessoa,qtds_d,ver_resp,i); 
         
         printf("\n\t\tREGISTO DE VACINA\n");
         Interface();
