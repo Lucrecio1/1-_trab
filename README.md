@@ -7,7 +7,7 @@
 * Preencher o registo _individual_
 * mostrar o registo _individual_
 # Programadores:
-1. [**Luzolo M. da C. Diango**👌🙂](https://free.facebook.com/luzolomarciadacosta?refid=12)
+1. [**Luzolo M. da C. Diango**👌🙂](https://github.com/21lu)
 2. [**Lucrécio D. Barnabe**👌🤨](https://github.com/Lucrecio1/) 
 3. _mais três_ 🤦‍♂️
 
