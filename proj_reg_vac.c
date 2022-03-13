@@ -103,7 +103,7 @@ void mod_1_reg(DADOS pessoa[],int i){
            fgets(pessoa[i].e_mail, 30, stdin);
 
         pessoa[i].cod_reg=(rand()%100)*12;
-         sms_1_sucesso(1);
+         sms_2_sucesso(1);
 }
 void mod_2_reg(DADOS pessoa[],int i){
      inf_etapas(2);
@@ -123,7 +123,7 @@ void mod_2_reg(DADOS pessoa[],int i){
             sms_1_analise(2);
            if ((pessoa[i].dat_nasc.dia > 0 && pessoa[i].dat_nasc.dia <= 31) && (pessoa[i].dat_nasc.mes > 0 && pessoa[i].dat_nasc.mes <= 12) && pessoa[i].dat_nasc.ano >= 1940)
             {
-                 sms_1_sucesso(2);
+                 sms_2_sucesso(2);
                  break;
             }else{
                 printf("\nData incerta");
@@ -146,7 +146,7 @@ void mod_3_reg(DADOS pessoa[],int i){
         printf("Digite a Municipio:");
             fflush(stdin);
             fgets(pessoa[i].muni_res, 30, stdin); 
-           sms_1_sucesso(3);  
+           sms_2_sucesso(3);  
 }
 void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
      inf_etapas(4);
@@ -173,10 +173,10 @@ void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
                             printf("\nDigite a Comorbilidade numero %d: ",i);
                             scanf("\n%[^\n]s", &p[indice].comorb[i].comorbil);
                         }
-                        sms_1_sucesso(4);
+                        sms_2_sucesso(4);
                         break;
                     }else{
-                      sms_2_erro(3);
+                      sms_4_erro(3);
                     }  
                 }
                break;
@@ -213,9 +213,9 @@ void Mostrar_RI(DADOS_IDT pessoa[],int qtd_reg){
     for (int i = 1; i <= qtd_reg; i++)
     {	 
     	 printf("\n Nome: %s",strupr(pessoa[i].Nome_cp));  
-         printf(" Codigo de registo: %dLLDDB%d", pessoa[i].COD_RI, pessoa[i].COD_RI*11 );
-         printf("\n Documento de ID: %s ", strupr(pessoa[i].DOC_IND));  
-         printf(" Numero do DI: %s\n ", pessoa[i].NUM_DI); 	
+         printf("Codigo de registo: %dLLDDB%d", pessoa[i].COD_RI, pessoa[i].COD_RI*11 );
+         printf("\nDocumento de ID: %s ", strupr(pessoa[i].DOC_IND));  
+         printf("Numero do DI: %s\n ", pessoa[i].NUM_DI); 	
     	  Interface();
     }pausar_ex();	
 }
@@ -245,7 +245,7 @@ void mostrar_Ri_por_parte(DADOS_IDT pessoa[], int opcao,int qtd_reg){
     }   
       if((opcao>qtd_reg)){
            system("cls");
-           sms_1_erro();         
+           sms_3_alert();         
         }
 }
 void op_mostrar( DADOS_IDT ver[], int op_most,int qtd_reg);
@@ -278,7 +278,7 @@ void main(){
         }
         else{
             system("cls");
-           sms_2_erro(5);
+           sms_4_erro(5);
             }  
         }  
         break;
@@ -349,7 +349,7 @@ void op_mostrar( DADOS_IDT ver[], int op_most, int qtd_reg){
          break;
          default:
          system("cls");
-          sms_1_erro();
+          sms_3_alert();
         }
     }
 }
