@@ -224,8 +224,8 @@ void Mostrar_RI(DADOS_IDT pessoa[],int qtd_reg){
 void Menu_principal(){
 	printf("\n\t\tESCOLHA A OPCAO\n");
 	Interface();	
-	printf("\n1- Efetuar registo\n");
-	printf("2- Opcoes Mostrar RI\n");
+	printf("\n1- Efetuar registo");
+	printf("\n2- Opcoes Mostrar RI\n");
     printf("0- Sair\n");
 }
 void mostrar_Ri_por_parte(DADOS_IDT pessoa[], int opcao,int qtd_reg){
