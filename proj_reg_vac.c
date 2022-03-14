@@ -191,13 +191,13 @@ void mod_4_reg(DADOS p[],int resp,int qtds_doe, int indice){
 }
 void CAD_VACINA(DADOS pessoa[],int ver_resp,int qtds_d,int i){
         mod_1_reg(pessoa,i);
-        mod_2_reg(pessoa,i);
-        mod_3_reg(pessoa,i);
-        mod_4_reg(pessoa,qtds_d,ver_resp,i); 
+        //mod_2_reg(pessoa,i);
+        //mod_3_reg(pessoa,i);
+       // mod_4_reg(pessoa,qtds_d,ver_resp,i); 
         
         printf("\n\t\tREGISTO DE VACINA\n");
         Interface();
-        printf("\nRegisto numero %d feito com sucesso", i);
+        printf("\nREGISTO NUMERO %d FEITO COM SUCESSO", i);
         _sleep(1300);
 }
 void preencher_RI(DADOS pessoa[], DADOS_IDT luc[],int i){
@@ -214,10 +214,10 @@ void Mostrar_RI(DADOS_IDT pessoa[],int qtd_reg){
     Interface();
     for (int i = 1; i <= qtd_reg; i++)
     {	 
-    	 printf("\n Nome: %s",strupr(pessoa[i].Nome_cp));  
+    	 printf("\nNome: %s",strupr(pessoa[i].Nome_cp));  
          printf("Codigo de registo: %dLLDDB%d", pessoa[i].COD_RI, pessoa[i].COD_RI*11 );
-         printf("\nDocumento de ID: %s ", strupr(pessoa[i].DOC_IND));  
-         printf("Numero do DI: %s\n ", pessoa[i].NUM_DI); 	
+         printf("\nDocumento de ID: %s", strupr(pessoa[i].DOC_IND));  
+         printf("Numero do DI: %s\n", pessoa[i].NUM_DI); 	
     	  Interface();
     }pausar_ex();	
 }
